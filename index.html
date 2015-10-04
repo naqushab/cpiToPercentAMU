@@ -69,7 +69,7 @@
 		<div class="row">
 			<form name="myform" novalidate> 
 			    <div ng-controller="Ctrl">
-			    	<input name="number" is-number ng-model="wks.number">
+			    	<input name="number" is-number ng-model="cpi">
 			    	<span ng-show="!wks.validity">Value is invalid</span>
 			    </div>
 			</form>
@@ -121,7 +121,7 @@
 		                if (arr.length === 1 && (arr[0] == '-' || arr[0] === '.' )) return;
 		                if (arr.length === 2 && newValue === '-.') return;
 		                if (isNaN(newValue)) {
-		                    scope.wks.number = oldValue;
+		                    scope.cpi = oldValue;
 		                }
 		            });
 				}
