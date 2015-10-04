@@ -28,10 +28,26 @@
   text-align: center;
  }
  .foot {
-  text-align: right;
   position: fixed;
   bottom: 0;
  }
+hr.style17 {
+	border-top: 1px solid #8c8b8b;
+	text-align: center;
+}
+hr.style17:after {
+	content: '§';
+	display: inline-block;
+	position: relative;
+	top: -14px;
+	padding: 0 10px;
+	background: #f0f0f0;
+	color: #8c8b8b;
+	font-size: 18px;
+	-webkit-transform: rotate(60deg);
+	-moz-transform: rotate(60deg);
+	transform: rotate(60deg);
+}
 </style>
 <body>
 
@@ -39,6 +55,7 @@
   <section class="header">
    <h1 class="title">CPI to Percentage Calculator, AMU</h1>
   </section>
+  <hr class="style17">
   <div class="row">
    <label for="cpiIO"><h2>CPI</h2></label>
    <input placeholder="Enter CPI here" id="cpiIO"  ng-model="cpi"></input>
@@ -50,7 +67,7 @@
   <div class="foot">
    <div class="two columns"><a class="button button-primary" href="http://naqushab.github.io">Contact Me</a></div>
    <div class="three columns"></div>
-   <div class="seven columns">This is a crude website. It is not meant for testing purposes but just to convert CPI into Percentage.</div>
+   <div class="seven columns">This is a crude website. It is not meant for testing purposes but just to convert CPI into Percentage. If you canmake it better, fork it and make it, Don't Complain.</div>
   </div>
 </div>
 
