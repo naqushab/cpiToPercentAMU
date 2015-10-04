@@ -30,18 +30,17 @@
 </style>
 <body>
 
-<div ng-app="cpiToPercent">
+<div ng-app="">
   <section class="header">
    <h1 class="title">CPI to Percentage Calculator, AMU</h1>
   </section>
   <div class="row">
    <label for="cpiIO">CPI</label>
    <input placeholder="Enter CPI here" id="cpiIO"  ng-model="cpi"></input>
-   {{ (20*(cpi*cpi*cpi) - 380*(cpi*cpi) + 2725*cpi -1690)/84 }}
   </div>
   <div class="row">
-   <label for="percentIO">Percentage</label>
-   {{ (20*(cpi*cpi*cpi) - 380*(cpi*cpi) + 2725*cpi -1690)/84 }}
+   <label>Percentage</label>
+   <h2>{{ (20*(cpi*cpi*cpi) - 380*(cpi*cpi) + 2725*cpi -1690)/84 }}</h2>
   </div>
 </div>
 
