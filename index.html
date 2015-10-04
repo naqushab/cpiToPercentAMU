@@ -37,10 +37,11 @@
   <div class="row">
    <label for="cpiIO">CPI</label>
    <input placeholder="Enter CPI here" id="cpiIO"  ng-model="cpi"></input>
+   {{ (20*(cpi*cpi*cpi) - 380*(cpi*cpi) + 2725*cpi -1690)/84 }}
   </div>
   <div class="row">
    <label for="percentIO">Percentage</label>
-   Percentage : <p ng-bind="cpi">{{ (20*(cpi*cpi*cpi) - 380*(cpi*cpi) + 2725*cpi -1690)/84 }}</p>
+   {{ (20*(cpi*cpi*cpi) - 380*(cpi*cpi) + 2725*cpi -1690)/84 }}
   </div>
 </div>
 
