@@ -24,6 +24,9 @@
 .header {
   margin-top: 6rem;
   text-align: center; }
+ .row {
+  text-align: center;
+ }
 </style>
 <body>
 
@@ -33,11 +36,11 @@
   </section>
   <div class="row">
    <label for="cpiIO">CPI</label>
-   <input class="u-full-width" placeholder="Enter CPI here" id="cpiIO"  ng-model="cpi"></input>
+   <input placeholder="Enter CPI here" id="cpiIO"  ng-model="cpi"></input>
   </div>
   <div class="row">
    <label for="percentIO">Percentage</label>
-   Percentage : {{ (20*(cpi*cpi*cpi) - 380*(cpi*cpi) + 2725*cpi -1690)/84 }}
+   Percentage : <p ng-bind="cpi">{{ (20*(cpi*cpi*cpi) - 380*(cpi*cpi) + 2725*cpi -1690)/84 }}</p>
   </div>
 </div>
 
