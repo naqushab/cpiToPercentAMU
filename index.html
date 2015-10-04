@@ -70,16 +70,7 @@
 			<label for="cpiIO">
 				<h2>CPI</h2>
 			</label>
-			<form name="myform" novalidate> 
-			    <div ng-controller="Ctrl">
-			    	<input name="number" is-number ng-model="cpi" id="cpiIO">
-			    	<span ng-show="!wks.validity">Value is invalid</span>
-			    </div>
-			</form>
-			<!--label for="cpiIO">
-				<h2>CPI</h2>
-			</label>
-			<input placeholder="Enter CPI here" id="cpiIO" ng-model="cpi" style="height: 1.75em;"></input-->
+			<input placeholder="Enter CPI here" id="cpiIO" ng-model="cpi" style="height: 1.75em;"></input>
 		</div>
 		<hr class="style14">
 		<div class="row">
@@ -100,30 +91,6 @@
 	</div>
 	<script>
 		var app = angular.module('myApp', []);
-		
-		var $scope;
-		
-		app.controller('Ctrl', function($scope) {
-		    $scope.wks =  {number: 1, validity: true}
-		});
-		
-		app.directive('isNumber', function () {
-			return {
-				require: 'ngModel',
-				link: function (scope) {	
-					scope.$watch('cpi', function(newValue,oldValue) {
-		                var arr = String(newValue).split("");
-		                if (arr.length === 0) return;
-		                if (arr.length === 1 && (arr[0] == '-' || arr[0] === '.' )) return;
-		                if (arr.length === 2 && newValue === '-.') return;
-		                if (isNaN(newValue)) {
-		                    scope.cpi = oldValue;
-		                }
-		            });
-				}
-			};
-		});
-		
 		app.filter('setDecimal', function($filter) {
 			return function(input, places) {
 				if (isNaN(input)) return input;
