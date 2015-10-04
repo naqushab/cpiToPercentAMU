@@ -79,10 +79,7 @@
 			</label>
 			<h3>{{ (20*(cpi*cpi*cpi) - 380*(cpi*cpi) + 2725*cpi -1690)/84 | setDecimal:2}} %</h3>
 			
-			<!-- Target -->
-			<input id="foo" value="{{ (20*(cpi*cpi*cpi) - 380*(cpi*cpi) + 2725*cpi -1690)/84 | setDecimal:2}}">
-			<!-- Trigger -->
-			<a class="button" data-clipboard-target="#foo">Copy</a>
+			<a class="button" data-clipboard-text={{ (20*(cpi*cpi*cpi) - 380*(cpi*cpi) + 2725*cpi -1690)/84 | setDecimal:2}}>Copy</a>
 		</div>
 		<br>
 		<br>
