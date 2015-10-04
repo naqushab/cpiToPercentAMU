@@ -67,10 +67,16 @@
 		</section>
 		<hr class="style17">
 		<div class="row">
-			<label for="cpiIO">
+			<form name="myform" novalidate> 
+			    <div ng-controller="Ctrl">
+			    	<input name="number" is-number ng-model="wks.number">
+			    	<span ng-show="!wks.validity">Value is invalid</span>
+			    </div>
+			</form>
+			<!--label for="cpiIO">
 				<h2>CPI</h2>
 			</label>
-			<input placeholder="Enter CPI here" id="cpiIO" ng-model="cpi" style="height: 1.75em;"></input>
+			<input placeholder="Enter CPI here" id="cpiIO" ng-model="cpi" style="height: 1.75em;"></input-->
 		</div>
 		<hr class="style14">
 		<div class="row">
@@ -96,6 +102,29 @@
 				if (isNaN(input)) return input;
 				var factor = "1" + Array(+(places > 0 && places + 1)).join("0");
 				return Math.round(input * factor) / factor;
+			};
+		});
+		
+		var $scope;
+		
+		app.controller('Ctrl', function($scope) {
+		    $scope.wks =  {number: 1, validity: true}
+		});
+		
+		app.directive('isNumber', function () {
+			return {
+				require: 'ngModel',
+				link: function (scope) {	
+					scope.$watch('cpi', function(newValue,oldValue) {
+		                var arr = String(newValue).split("");
+		                if (arr.length === 0) return;
+		                if (arr.length === 1 && (arr[0] == '-' || arr[0] === '.' )) return;
+		                if (arr.length === 2 && newValue === '-.') return;
+		                if (isNaN(newValue)) {
+		                    scope.wks.number = oldValue;
+		                }
+		            });
+				}
 			};
 		});
 	</script>
