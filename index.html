@@ -67,9 +67,12 @@
 		</section>
 		<hr class="style17">
 		<div class="row">
+			<label for="cpiIO">
+				<h2>CPI</h2>
+			</label>
 			<form name="myform" novalidate> 
 			    <div ng-controller="Ctrl">
-			    	<input name="number" is-number ng-model="cpi">
+			    	<input name="number" is-number ng-model="cpi" id="cpiIO">
 			    	<span ng-show="!wks.validity">Value is invalid</span>
 			    </div>
 			</form>
@@ -97,13 +100,6 @@
 	</div>
 	<script>
 		var app = angular.module('myApp', []);
-		app.filter('setDecimal', function($filter) {
-			return function(input, places) {
-				if (isNaN(input)) return input;
-				var factor = "1" + Array(+(places > 0 && places + 1)).join("0");
-				return Math.round(input * factor) / factor;
-			};
-		});
 		
 		var $scope;
 		
@@ -125,6 +121,14 @@
 		                }
 		            });
 				}
+			};
+		});
+		
+		app.filter('setDecimal', function($filter) {
+			return function(input, places) {
+				if (isNaN(input)) return input;
+				var factor = "1" + Array(+(places > 0 && places + 1)).join("0");
+				return Math.round(input * factor) / factor;
 			};
 		});
 	</script>
