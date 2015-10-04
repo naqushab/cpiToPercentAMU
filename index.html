@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html lang="en-US">
+ <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>CPI to Percentage Calculator | AMU</title>
+  <meta name="description" content="CPI to Percentage Calculator for Aligarh Muslim University Faculty of Engineering and Technology Zakir Hussain College of Engineering and Technology">
+  <meta name="author" content="Naqushab Neyazee">
+  <meta name="keywords" content="CPI, Percentage, Aligarh Muslim University, AMU, ZHCET,Faculty of Engineering and Technology, Zakir Hussain College of Engineering and Technology, Converter, Marks ">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css' rel='stylesheet' type='text/css'>
+<style>
+ body{
+  font-family: 'Poiret One', cursive;
+ }
+ .container {
+  max-width: 800px; }
+.header {
+  margin-top: 6rem;
+  text-align: center; }
+</style>
 <body>
 
-<div ng-app="">
- 	<p>CPI : <input type="text" ng-model="cpi"></p>
- 	<h1>Percentage : {{ (20*(cpi*cpi*cpi) - 380*(cpi*cpi) + 2725*cpi -1690)/84 }}</h1>
+<div ng-app="cpiToPercent">
+  <section class="header">
+   <h1 class="title">CPI to Percentage Calculator, AMU</h1>
+  </section>
+  <div class="row">
+   <label for="cpiIO">CPI</label>
+   <input class="u-full-width" placeholder="Enter CPI here" id="cpiIO"  ng-model="cpi"></input>
+  </div>
+  <div class="row">
+   <label for="percentIO">Percentage</label>
+   Percentage : {{ (20*(cpi*cpi*cpi) - 380*(cpi*cpi) + 2725*cpi -1690)/84 }}
+  </div>
 </div>
 
 </body>
